@@ -1,18 +1,18 @@
 // complete the given function
 
+
 function palindrome(str){
+ const string = str.toLowerCase();
+ const len = str.length;
 
-	let start = 0;
-	let end = str.length-1;
+    // loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
 
-	while(start<=end) {
-		if(str[start] != str[end]) {
-			return false;
-			break;
-		}
-		start++;
-		end--;
-	}
-	return true;
+        // check if first and last string are same
+        if (string[i] !== string[len - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
 }
 module.exports = palindrome
